@@ -1,0 +1,35 @@
+﻿
+<div class="col-md-6 col-md-offset-4">
+    <h4>Login</h4>
+    <form name="loginForm" ng-submit="vm.login()" role="form">
+
+        <div class="form-group" ng-class="{ 'has-error': loginForm.username.$dirty && loginForm.username.$error.required }">
+            <label for="email">E-mail</label>
+            <input type="email" name="email" id="email" class="form-control" ng-model="vm.loginData.userName" required />
+            <span ng-show="loginForm.email.$dirty && loginForm.email.$error.required" class="help-block">E-mail is required</span>
+            <span ng-show="loginForm.email.$error.email">Invalid email address.</span>
+        </div>
+
+        <div class="form-group" ng-class="{ 'has-error': loginForm.password.$dirty && loginForm.password.$error.required }">
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password" class="form-control" ng-model="vm.loginData.password" required />
+            <span ng-show="loginForm.password.$dirty && loginForm.password.$error.required" class="help-block">Password is required</span>
+        </div>
+        <div class="form-actions">
+            <button type="submit" ng-disabled="loginForm.$invalid || vm.dataLoading" class="btn btn-primary">Login</button>
+            <img ng-if="vm.dataLoading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+            <a href="#!/head" class="btn btn-link" ng-if="!vm.dataLoading">Cancel</a>
+            <a href="#!/register" class="btn btn-link" ng-if="!vm.dataLoading">Register</a>
+        </div>
+        <div class="form-group">
+            <span ng-show="vm.savedSuccessfully"><a href="#!/login" class="btn btn-link">Login</a></span>
+        </div>
+        <div data-ng-hide="vm.message == ''" data-ng-class="(vm.savedSuccessfully) ? 'alert alert-success' : 'alert alert-danger'">
+            {{vm.message}}
+        </div>
+    </form>
+    <div class="alert alert-danger" ng-if="vm.error">
+        <strong>There was an error: </strong> {{login.error.error}}
+        <br>Please go back and login again
+    </div>
+</div>

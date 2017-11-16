@@ -1,0 +1,44 @@
+﻿<div class="text-center">
+    <h4>Documents of {{memberOwner}}</h4>
+</div>
+<div class="row">
+    <div class="col-md-2 col-md-offset-1">
+        <label class="label-info" for="name">Description</label>
+        <input  ng-model="description" placeholder="Description" />
+    </div>
+</div>
+<br/>
+<div class="row">
+    <div class="col-md-2 col-md-offset-1">
+        <div>
+            <input name="docFile" upload-file="docFile" type="file" accept="image/jpeg" />
+        </div>
+        <br/>
+        <div>
+            <input type="button" class="btn btn-primary" ng-click="doUpload()" value="Upload" />
+        </div>
+    </div> 
+</div>
+<br/>
+<div class="container">
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <!--
+            <thead>
+                <tr class="row">
+                    <th class="col-md-2 text-center info"></th>
+                    <th class="col-md-1 text-center info"></th>                  
+                </tr>
+            </thead>
+                -->
+            <tbody>
+                <tr class="row" ng-repeat="item in listImgId">
+                    <td class="col-md-2 text-center info"><img src="api/MemberDoc/{{item}}" width="150" height="150" alt="" /></tdclass="col-md-2>
+                    <td class="col-md-1 text-center info"><input type="button" class="btn btn-warning" ng-click="delete(item)" value="Delete" /></td>                
+                   </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+

@@ -1,0 +1,40 @@
+﻿<div  class="text-center">
+    <h4>List of companionships</h4>
+</div>
+<div>
+    <input type="button" value="Addnew" ng-disabled="vm.dataLoading" class="btn btn-primary" data-ng-click="vm.addNew()" />
+</div>
+<br/>
+<div class="container">
+ <div class="table-responsive">
+  <table class="table table-striped">
+      <thead>
+          <tr class="row">
+              <th class="col-md-2 text-center info">Name</th>
+              <th class="col-md-1 text-center info">Address</th>
+              <th class="col-md-1 text-center info">Membership</th>
+              <th class="col-md-1 text-center info">Registration</th>
+              <th class="col-md-1 text-center info">Chairman</th>
+              <th class="col-md-1 text-center info">Addition</th>
+              <th class="col-md-1 text-center info"></th>
+              <th class="col-md-1 text-center info"></th>
+              <th class="col-md-1 text-center info"></th>
+          </tr>
+      </thead>
+          <tbody>
+              <tr class="row" ng-repeat="companionShip in vm.companionShips">
+                  <td>{{companionShip.Name}}</td>
+                  <td>{{companionShip.Address}}</td>
+                  <td>{{companionShip.Membership}}</td>
+                  <td>{{companionShip.Registration}}</td>
+                  <td>{{companionShip.Chairman}}</td>
+                  <td>{{companionShip.Addition}}</td>
+                  <td><input type="button" value="Update" data-ng-click="vm.update($index, companionShip)" /></td>
+                  <td><input type="button" value="Delete" data-ng-click="vm.delete($index, companionShip)" /></td>
+                  <td><input type="button" value="Go to companionship" data-ng-click="vm.goto($index, companionShip)" /></td>
+              </tr>
+          </tbody>
+</table>
+ </div>
+</div>
+

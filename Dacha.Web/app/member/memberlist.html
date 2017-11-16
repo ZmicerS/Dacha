@@ -1,0 +1,39 @@
+﻿<div class="text-center">
+    <h4>Members of companionship {{vm.companionshipName}}</h4>
+</div>
+<div>
+    <input type="button" value="Addnew" ng-disabled="vm.dataLoading" class="btn btn-primary" data-ng-click="vm.addNew()" />
+</div>
+<br />
+<div class="container">
+    <div class="table-responsive">
+        <table class="table table-striped table-bordered">
+            <thead>
+                <tr class="row">
+                    <th class="col-md-2 text-center info">Owner</th>
+                    <th class="col-md-1 text-center info">Adress of plot</th>
+                    <th class="col-md-1 text-center info">Number of plot</th>
+                    <th class="col-md-1 text-center info">Square of plot</th>
+                    <th class="col-md-1 text-center info">Adress of plot</th>
+                    <th class="col-md-1 text-center info">Addition</th>
+                    <th class="col-md-1 text-center info"></th>
+                    <th class="col-md-1 text-center info"></th>
+                    <th class="col-md-1 text-center info"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="row" ng-repeat="member in vm.members">
+                    <td>{{member.Owner}}</td>
+                    <td>{{member.PlotAddress}}</td>
+                    <td>{{member.PlotNumber}}</td>
+                    <td>{{member.PlotSquare}}</td>
+                    <td>{{member.OwnerAddress}}</td>
+                    <td>{{member.Addition}}</td>         
+                    <td><input type="button" value="Update" data-ng-click="vm.update($index, member)" /></td>                   
+                    <td><input type="button" value="Delete" data-ng-click="vm.delete($index, member)" /></td>
+                    <td><input type="button" value="Go to member docs" data-ng-click="vm.goto($index, member)" /></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

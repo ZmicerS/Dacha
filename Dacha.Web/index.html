@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link href="content/bootstrap.css" rel="stylesheet" />
+    <script type="text/javascript" src="Scripts/jquery-1.9.1.js"></script>
+    <script type="text/javascript" src="Scripts/angular.js"></script>
+    <script type="text/javascript" src="Scripts/angular-ui-router.js"></script>
+    <script type="text/javascript" src="Scripts/bootstrap.js"></script>
+    <script type="text/javascript" src="Scripts/angular-ui/ui-bootstrap-tpls.js"></script>
+    <script type="text/javascript" src="Scripts/angular-ui/ui-bootstrap.js"></script>
+</head>
+<body ng-app="appModuleDacha">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-4">
+            <h4>Dacha</h4>
+        </div>
+    </div>
+<div class="row"> 
+ <div class="col-md-2 col-md-offset-1">
+   <a ui-sref="companionshiplist">companionshiplist</a>
+ </div>
+</div>
+    <div>
+        <ui-view></ui-view>
+    </div>
+        <script type="text/javascript" src="/app/app.js"></script>
+        <script type="text/javascript" src="/app/directives/uploadFile.js"></script>
+        <script type="text/javascript" src="/app/directives/compareTo.js"></script>   
+        <script type="text/javascript" src="/app/services/registerService.js"></script>
+        <script type="text/javascript" src="/app/services/loginService.js"></script> 
+        <script type="text/javascript" src="/app/services/refreshTokenService.js"></script>
+        <script type="text/javascript" src="/app/services/companionshipService.js"></script>
+        <script type="text/javascript" src="/app/services/memberService.js"></script>
+        <script type="text/javascript" src="/app/services/memberDocService.js"></script>
+        <script type="text/javascript" src="/app/head/headController.js"></script>
+        <script type="text/javascript" src="/app/account/registerController.js"></script>
+        <script type="text/javascript" src="/app/account/loginController.js"></script>
+        <script type="text/javascript" src="/app/companionship/companionshipListController.js"></script>
+        <script type="text/javascript" src="/app/companionship/companionshipAddNewController.js"></script>              
+        <script type="text/javascript" src="/app/companionship/companionshipUpadateController.js"></script>
+        <script type="text/javascript" src="/app/member/memberListController.js"></script>
+        <script type="text/javascript" src="/app/member/memberUpdateController.js"></script>   
+        <script type="text/javascript" src="/app/member/memberAddNewController.js"></script>
+        <script type="text/javascript" src="/app/memberdoc/memberDocListController.js"></script>
+        <script type="text/javascript" src="/app/config/configRoot.js"></script>
+        <script type="text/javascript" src="/app/config/configCompanionship.js"></script>
+        <script type="text/javascript" src="/app/config/configMember.js"></script>
+        <script type="text/javascript" src="/app/config/configMemberDoc.js"></script>
+</body>
+</html>
