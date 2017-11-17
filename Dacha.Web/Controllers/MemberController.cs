@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
+using System.Threading.Tasks;
 using Dacha.Web.Models;
 using Dacha.Bll.Models;
-using System.Threading.Tasks;
 using Dacha.Bll.Interfaces;
 
 namespace Dacha.Web.Controllers
@@ -37,8 +37,7 @@ namespace Dacha.Web.Controllers
             });            
             return Ok(membersList);
         }
-
-           
+       
         public async Task <IHttpActionResult> Post([FromBody] MemberUi member)
         {
             if (!ModelState.IsValid)

@@ -1,12 +1,12 @@
-﻿using Dacha.Bll.Interfaces;
-using Dacha.Bll.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web.Http;
+using Dacha.Bll.Interfaces;
+using Dacha.Bll.Models;
 
 namespace Dacha.Web.Controllers
 {
@@ -19,7 +19,6 @@ namespace Dacha.Web.Controllers
         {
             _memberDocService = memberDocService;
         }
-
 
         [HttpPost]
         [Route("api/upload/files")]
@@ -61,13 +60,9 @@ namespace Dacha.Web.Controllers
                 }                                
             }
             _memberDocService.UploadSingleFile(memberDocDto);
-            //
             return Ok("file upload");
         }
-
-         
-
-        //       
+     
         [HttpGet]
         [Route("api/MemberDocListId/{id}")]
         public IEnumerable<string> MemberDocListId(string id)
@@ -118,4 +113,4 @@ namespace Dacha.Web.Controllers
         }
     }
 }
-///
+

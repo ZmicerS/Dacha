@@ -7,7 +7,6 @@ namespace Dacha.Web.Models
     public class MemberUi
     {       
         public string Id { get; set; }
-
         [Required]
         [StringLength(100)]
         public string Owner { get; set; }
@@ -30,6 +29,5 @@ namespace Dacha.Web.Models
 
         [Required]
         public Guid CompanionshipId { get; set; }
-
     }
 }

@@ -47,13 +47,10 @@ namespace Dacha.Bll.Services
                 }
             }
             catch (AggregateException ae)
-            {
-                        
+            {                        
             }
-
             return list;
         }
-
 
          public async Task WriteCompanionshipAync(CompanionshipDto data)       
         {
@@ -74,7 +71,6 @@ namespace Dacha.Bll.Services
             {
 
             }
-
         }
 
         public async Task UpdateCompanionshipAync(CompanionshipDto data)
@@ -105,7 +101,7 @@ namespace Dacha.Bll.Services
 
             }
 
-       }//
+       }
 
         public async Task DeleteCompanionshipAync(string id)
         {
@@ -120,7 +116,5 @@ namespace Dacha.Bll.Services
 
             }
         }
-
     }
-
 }
