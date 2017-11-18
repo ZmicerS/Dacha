@@ -12,7 +12,6 @@ namespace Dacha.Dal.EF
     {
         public static string ConnectionStringName => ConfigurationManager.AppSettings["ConnectionStringName"] ?? "DachaContext";
 
-
         static ApplicationContext()
         {          
            Database.SetInitializer<ApplicationContext>(new IdentityDbInit());
@@ -28,32 +27,26 @@ namespace Dacha.Dal.EF
         {
 
         }
-
         public DbSet<RefreshToken> RefreshTokens { get; set; }
         public DbSet<Companionship> Companionships { get; set; }
         public DbSet<Member> Members { get; set; }
         public DbSet<MemberDoc> MemberDocs { get; set; }
-
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
               modelBuilder.Configurations.Add(new CompanionshipConfiguration());
               modelBuilder.Configurations.Add(new MemberConfiguration());
               modelBuilder.Configurations.Add(new MemberDocConfiguration());
-            base.OnModelCreating(modelBuilder);
-
+              base.OnModelCreating(modelBuilder);
         }
     }
-
 
 
     public class CompanionshipConfiguration : EntityTypeConfiguration<Companionship>
     {
         public CompanionshipConfiguration()
         {
-            this.ToTable("CompanionShip", "dbo").HasKey<Guid>(k => k.Id);
-           
-
+            this.ToTable("CompanionShip", "dbo").HasKey<Guid>(k => k.Id);           
             this.Property(x => x.Id).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
             this.Property(x => x.RowVersion).IsRowVersion();
             this.Property(c => c.Name).IsRequired().HasMaxLength(128);
@@ -61,8 +54,7 @@ namespace Dacha.Dal.EF
             this.Property(c => c.Registration).HasMaxLength(256);
             this.Property(c => c.Chairman).HasMaxLength(256);
             this.Property(c => c.Membership).HasMaxLength(50);
-            this.Property(c => c.Addition).HasMaxLength(256);
-           
+            this.Property(c => c.Addition).HasMaxLength(256);           
         }
     }
 
@@ -82,7 +74,6 @@ namespace Dacha.Dal.EF
             this.HasOptional<Companionship>(c => c.Companionship).WithMany(m => m.Members).HasForeignKey(x => x.CompanionshipId).WillCascadeOnDelete(false);      
         }
     }
-
 
     public class MemberDocConfiguration : EntityTypeConfiguration<MemberDoc>
     {

@@ -8,7 +8,6 @@ using Thinktecture.IdentityModel.Tokens;
 
 namespace Dacha.Bll.Providers
 {
-
     public class CustomJwtFormat : ISecureDataFormat<AuthenticationTicket>
     {
         private static readonly byte[] _secret = TextEncodings.Base64Url.Decode(ConfigurationManager.AppSettings["secret"]);
@@ -29,7 +28,7 @@ namespace Dacha.Bll.Providers
             var signingKey = new  HmacSigningCredentials(_secret);
             var issued = data.Properties.IssuedUtc;
             var expires = data.Properties.ExpiresUtc;
-            //
+            
             return new JwtSecurityTokenHandler().WriteToken(new JwtSecurityToken(_issuer, "Any", data.Identity.Claims, issued.Value.UtcDateTime, expires.Value.UtcDateTime, signingKey));         
         }
 
@@ -38,6 +37,4 @@ namespace Dacha.Bll.Providers
             throw new NotImplementedException();
         }
     }
-
-
 }

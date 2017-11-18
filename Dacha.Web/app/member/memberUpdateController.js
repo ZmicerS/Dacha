@@ -8,7 +8,6 @@
         var vm = this;      
         var companionshipId = $stateParams.companionshipId;
         vm.companionshipName = $stateParams.companionshipName;
-        //
        
         vm.updateData = {
             companionshipId : $stateParams.companionshipId,
@@ -20,18 +19,16 @@
             ownerAddress : $stateParams.ownerAddress,
             addition : $stateParams.addition
         };
-        //
+        
         vm.cancel = function () {                     
             $state.go('memberlist', {
                 'companionshipId': companionshipId,
                 'companionshipName': vm.companionshipName
             });
         }
-    //
-        //
 
         vm.dataLoading = false;      
-        //
+        
         vm.update = function () {            
             vm.dataLoading = true;
             var datasend = {
@@ -53,7 +50,5 @@
                 },
                 function (error) { vm.dataLoading = false });
         };
-        //
     }
-    //
 })();

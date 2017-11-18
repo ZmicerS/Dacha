@@ -9,7 +9,6 @@ using Dacha.Dal.Interfaces;
 
 namespace Dacha.Bll.Providers
 {
-
     public class RefreshTokenProvider : IAuthenticationTokenProvider
     {
         private IUnitOfWork _database;
@@ -31,7 +30,7 @@ namespace Dacha.Bll.Providers
             };
 
             var refreshTokenTicket = new AuthenticationTicket(context.Ticket.Identity, refreshTokenProperties);
-            //////
+            
             var token = new RefreshToken()
             {
                 Id = guid, //Helper.GetHash(refreshTokenId)
@@ -52,9 +51,8 @@ namespace Dacha.Bll.Providers
             }
 
             _database.RefreshTokenRepository.Insert(token);
-            _database.Save();
-
-           
+            _database.Save();     
+            
             // consider storing only the hash of the handle  
             context.SetToken(guid);
         }
@@ -80,13 +78,9 @@ namespace Dacha.Bll.Providers
             {   //Get protectedTicket from refreshToken class
                 context.DeserializeTicket(refreshToken.ProtectedTicket);
                                
-                _database.RefreshTokenRepository.Delete(refreshToken);
-                
+                _database.RefreshTokenRepository.Delete(refreshToken);             
                 _database.Save();
-            }
-           
+            }           
         }
     }
-
-
 }

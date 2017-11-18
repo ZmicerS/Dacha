@@ -21,25 +21,25 @@ Autofac uses for  container IoC.
 
 These assemblies must be installed through NuGet Packages.  
 
- - EntityFramework,
- - Microsoft.AspNet.Cors,  
- - Microsoft.AspNet.Identity.Core,
- - Microsoft.AspNet.Identity.EntityFramework,
- - Microsoft.AspNet.Identity.Owin, 
- - Microsoft.Owin.Cors,
- - Microsoft.AspNet.WebApi.Owin,
- - Microsoft.Owin.Cors,
- - Microsoft.Owin.Security.Jwt,
- - Microsoft.Owin.Host.SystemWeb,
- - System.IdentityModel.Tokens.Jwt,
- - Thinktecture.IdentityModel.Core,
- - AngularJS.Core,
- - Angular.UI.UI-Router,
- - Angular.UI.Bootstrap,
- - Bootstrap,
- - jQuery,
- - Autofac,
- - Autofac.Owin,
+ - EntityFramework
+ - Microsoft.AspNet.Cors  
+ - Microsoft.AspNet.Identity.Core 
+ - Microsoft.AspNet.Identity.EntityFramework  
+ - Microsoft.AspNet.Identity.Owin 
+ - Microsoft.Owin.Cors
+ - Microsoft.AspNet.WebApi.Owin
+ - Microsoft.Owin.Cors
+ - Microsoft.Owin.Security.Jwt
+ - Microsoft.Owin.Host.SystemWeb
+ - System.IdentityModel.Tokens.Jwt
+ - Thinktecture.IdentityModel.Core
+ - AngularJS.Core
+ - Angular.UI.UI-Router
+ - Angular.UI.Bootstrap
+ - Bootstrap
+ - jQuery
+ - Autofac
+ - Autofac.Owin
  - Autofac.WebApi2
 
 

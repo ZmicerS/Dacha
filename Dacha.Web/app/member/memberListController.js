@@ -19,7 +19,6 @@
 
         var deleteData = null;
 
-        //
         function getListMembersCompanionship() {
             //
             memberService.getMembersCompanionship(companionshipId).then(function (response) {
@@ -30,9 +29,9 @@
                     vm.dataLoading = false;
                 });
         }
-        //
+        
         getListMembersCompanionship();
-        //
+        
         vm.goto = function (index, member) {         
             sessionStorage.setItem('memberId', member.Id);
             sessionStorage.setItem('memberOwner', member.Owner);
@@ -40,7 +39,7 @@
                 'memberId': member.Id,
                 'memberOwner': member.Owner});
         }
-        //
+        
         vm.addNew = function () {
             $state.go('memberaddnew', {
                 'companionshipId': companionshipId,
@@ -57,18 +56,14 @@
                 });
         }
 
-
         vm.delete = function (index, data) {          
             deleteData = data;                     
             askDelete();
         }
 
-
         function askDelete() {            
             openModal();
         };
-
-
 
         var openModal = function () {
             $scope.uibModalInstance = $uibModal.open({
@@ -85,8 +80,7 @@
                 deleteMember();
             }, function () {               
             });
-            //;
-        }//end
+        }
 
         function deleteMember() {
             memberService.deleteMember(deleteData).then(function (response) {              
@@ -96,11 +90,9 @@
                 function (error) {
 
                 });
-        }
-    //
-      
+        }      
     }
-    //
+    
     angular.module('appModuleDacha').controller("memberDeleteHandlerController", function ($scope, $uibModalInstance) {
 
         $scope.cancelModal = function () {
@@ -109,7 +101,5 @@
         $scope.ok = function () {
             $uibModalInstance.close('save');
         }
-
     });
-    //
 })();

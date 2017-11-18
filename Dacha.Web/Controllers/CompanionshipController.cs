@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
+using System.Threading.Tasks;
 using Dacha.Web.Models;
 using Dacha.Bll.Models;
-using System.Threading.Tasks;
 using Dacha.Bll.Interfaces;
 
 namespace Dacha.Web.Controllers
@@ -43,11 +43,11 @@ namespace Dacha.Web.Controllers
             {
                 return BadRequest("Can't read data.");
             }
-                return Ok(list);
+            return Ok(list);
         }
      
          public async Task<IHttpActionResult> Post([FromBody]CompanionshipUi data)
-        {
+         {
             if (!ModelState.IsValid)
             {             
                 return InternalServerError();
@@ -70,7 +70,7 @@ namespace Dacha.Web.Controllers
 
             }
             return Ok();
-        }
+         }
 
         public async Task<IHttpActionResult> Put(string id, [FromBody]CompanionshipUi data)
         {

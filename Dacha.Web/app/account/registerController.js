@@ -33,7 +33,6 @@
                     vm.registerError = true;
                     vm.registerMessage = error.data.Message;
                 });
-        }//
+        }
     }
-
 })();

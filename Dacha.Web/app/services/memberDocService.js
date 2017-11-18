@@ -37,7 +37,6 @@
             if (accesstoken) {
                 currentHeader.Authorization = 'Bearer ' + accesstoken;
             }
-            //
 
             $http({               
                 url: '/api/upload/files',
@@ -78,8 +77,5 @@
         }
 
         return service;
-
     }
-
 })();
-//

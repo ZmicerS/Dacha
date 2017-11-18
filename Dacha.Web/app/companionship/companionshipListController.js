@@ -13,17 +13,16 @@
         //
         getListCompanionships();
 
-        //
         function getListCompanionships() { 
          //   refreshTokenService.refreshToken().then(function (response) { }, function (error) { });
         companionshipService.getCompanionships().then(function (response) {
             vm.companionShips = response.data;
             vm.dataLoading = false;
-        },
+            },
             function (error) {
                 vm.dataLoading = false;
             });
-    }
+        }
 
         //
         vm.goto = function (index, data) {         
@@ -65,12 +64,12 @@
             $state.reload();
         }
 
-///////
         function askDelete()
         {
             openModal();
         };
-       var openModal = function () {
+
+        var openModal = function () {
             $scope.uibModalInstance = $uibModal.open({
                 ariaLabelledBy: 'modal-title',
                 ariaDescribedBy: 'modal-body',
@@ -86,15 +85,10 @@
             }, function () {
               
             });
-            //;
-        }//end
-
-     
-
-     
+        }     
     }
-    //
-    //
+    
+    
     angular.module('appModuleDacha').controller("ModelHandlerController", function ($scope, $uibModalInstance) {
 
         $scope.cancelModal = function () {          
@@ -103,8 +97,5 @@
         $scope.ok = function () {
             $uibModalInstance.close('save');
         }
-
     });
-
-    //
 })();

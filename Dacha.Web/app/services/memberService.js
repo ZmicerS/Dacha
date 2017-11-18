@@ -11,7 +11,7 @@
             if (accesstoken) {
                 currentHeader.Authorization = 'Bearer ' + accesstoken;
             }
-            //
+            
             var deferred = $q.defer();
             $http({
                 url: '/api/GetMembersCompanionship/' + companionshipId,
@@ -23,11 +23,8 @@
                 }, function (response) {                   
                     deferred.reject(response);
                 });
-
             return deferred.promise;
         }
-
-
 
         service.addMember = function (data) {
             var deferred = $q.defer();
@@ -49,9 +46,7 @@
             if (accesstoken) {
                 currentHeader.Authorization = 'Bearer ' + accesstoken;
             }
-            //
-
-            //
+ 
             $http({
                 url: '/api/Member',
                 method: "POST",
@@ -97,7 +92,6 @@
                 }, function (response) {                 
                     deferred.reject(response);
                 });
-            //
             return deferred.promise;
         }
 
@@ -109,7 +103,6 @@
             if (accesstoken) {
                 currentHeader.Authorization = 'Bearer ' + accesstoken;
             }
-
             $http({
                 url: '/api/Member/' + data.Id,
                 method: "DELETE",
@@ -119,11 +112,8 @@
             }, function (response) {               
                 deferred.reject(response);//.data);//.error);
             });
-
             return deferred.promise;
         }
-
         return service;
     }
-
 })();

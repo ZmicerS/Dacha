@@ -59,7 +59,5 @@ namespace Dacha.Dal.Interfaces
         /// </summary>
         /// <param name="entityToDelete">object to delete</param>
         void Delete(T entityToDelete);
-
     }
-
 }

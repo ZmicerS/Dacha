@@ -32,7 +32,6 @@
                     vm.message = error.data.error;
                 });
         };
-
     }]);
 })();
 

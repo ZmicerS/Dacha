@@ -8,7 +8,6 @@
         var vm = this;     
         var companionshipId = $stateParams.companionshipId;
         vm.companionshipName = $stateParams.companionshipName;
-        //
       
         vm.dataLoading = false;
         vm.addData = {
@@ -21,8 +20,7 @@
             addition: "",
             companionshipId: companionshipId
         };
-        //       
-        //
+      
         vm.addition = function () {
               vm.dataLoading = true;
               memberService.addMember(vm.addData)
@@ -44,5 +42,4 @@
             });
         }
     }
-    //
 })();

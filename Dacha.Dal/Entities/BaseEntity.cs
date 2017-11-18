@@ -16,5 +16,4 @@ namespace Dacha.Dal.Entities
         /// </summary>       
         public byte[] RowVersion { get; set; }
     }
-
 }

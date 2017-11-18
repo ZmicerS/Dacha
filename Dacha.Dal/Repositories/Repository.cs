@@ -119,8 +119,6 @@ namespace Dacha.Dal.Repositories
             }
             _dbSet.Remove(entityToDelete);
         }
-
     }
-
 }
 

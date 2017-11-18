@@ -27,8 +27,7 @@
                     $scope.listImgId = response.data;
                 },
                 function (error) {          
-                });
-            
+                });            
         }        
 
          $scope.delete = function (item) {            
@@ -49,14 +48,12 @@
                 controllerAs: '$ctrl',
                 size: 'lg',
                 resolve: {
-
                 }
             }).result.then(function () {
                 deleteMemberDoc();
             }, function () {                
-            });
-            //;
-        }//end
+            });            
+        }
 
         function deleteMemberDoc() {
             memberDocService.deleteMember(deleteData)
@@ -65,9 +62,7 @@
                 }, function (response) {                    
                 });
         }
-    //
 
-      //
         $scope.doUpload = function () {
             var file = $scope.docFile;
             if (file !== undefined) {
@@ -84,12 +79,9 @@
                     }, function (response) {                       
                     });
             }
-
         }
-    //
-
     }    
-    //
+    
     angular.module('appModuleDacha').controller("memberDocDeleteHandlerController", function ($scope, $uibModalInstance) {
 
         $scope.cancelModal = function () {
@@ -100,5 +92,4 @@
             $uibModalInstance.close('save');
         }
     });
-    //
 })();

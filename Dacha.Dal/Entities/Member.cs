@@ -25,7 +25,4 @@ namespace Dacha.Dal.Entities
             MemberDocs = new List<MemberDoc>();
         }
     }
-
-
-
 }

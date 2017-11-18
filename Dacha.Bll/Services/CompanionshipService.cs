@@ -52,8 +52,9 @@ namespace Dacha.Bll.Services
             return list;
         }
 
+
          public async Task WriteCompanionshipAync(CompanionshipDto data)       
-        {
+         {
             var companionship = new Companionship() {
                 Name = data.Name,
                 Address = data.Address,
@@ -71,7 +72,8 @@ namespace Dacha.Bll.Services
             {
 
             }
-        }
+
+         }
 
         public async Task UpdateCompanionshipAync(CompanionshipDto data)
         {
@@ -101,7 +103,7 @@ namespace Dacha.Bll.Services
 
             }
 
-       }
+        }
 
         public async Task DeleteCompanionshipAync(string id)
         {

@@ -1,19 +1,18 @@
 ﻿using System;
 using System.Web.Http;
 using System.Configuration;
-using System.Reflection;
 using Microsoft.Owin;
 using Owin;
 using Microsoft.Owin.Security.DataHandler.Encoder;
 using Microsoft.Owin.Security.Jwt;
 using Microsoft.Owin.Security;
 using Microsoft.Owin.Security.OAuth;
-using Microsoft.Owin.Security.Infrastructure;
-using Microsoft.Owin.Cors;
 using Autofac;
 using Autofac.Integration.WebApi;
-using Dacha.Bll.Providers;
+using System.Reflection;
 using Dacha.Bll.Configs;
+using Dacha.Bll.Providers;
+
 
 namespace Dacha.Web
 {
@@ -73,7 +72,7 @@ namespace Dacha.Web
             //must be here    
             app.UseWebApi(httpConfiguration);
             //
-            app.UseCors(Microsoft.Owin.Cors.CorsOptions.AllowAll);
+            app.UseCors(Microsoft.Owin.Cors.CorsOptions.AllowAll);       
         }
     }
 }

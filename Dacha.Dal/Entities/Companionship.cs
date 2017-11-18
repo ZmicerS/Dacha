@@ -19,7 +19,4 @@ namespace Dacha.Dal.Entities
             Members = new List<Member>();
         }
     }
-
-
-
 }

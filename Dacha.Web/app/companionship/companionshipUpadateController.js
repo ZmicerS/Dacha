@@ -17,12 +17,12 @@
             membership: $stateParams.membership,
             addition: $stateParams.addition
         }
-        //
-        //
+        
+        
         vm.cancel = function () {          
             $state.go('companionshiplist');
         }
-    //
+    
         vm.update = function () {
             vm.dataLoading = true;
             var datasend = {
@@ -40,7 +40,6 @@
                 $state.go('companionshiplist');
                 },
                 function (error) { vm.dataLoading = false });
-        };
-        // 
-    }//
+        };         
+    }
 })();

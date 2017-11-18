@@ -18,6 +18,7 @@ namespace Dacha.Web.Controllers
             _accountService = accountService;
         }
 
+
         [Route("api/account/register")]
         public async Task<IHttpActionResult> RegisterAsync([FromBody]RegisterViewModel registerModel)
         {
@@ -36,7 +37,8 @@ namespace Dacha.Web.Controllers
             }
             catch (Exception e)
             {
-                return BadRequest(e.Message);                    
+                return BadRequest(e.Message);
+                    
             }
             return Ok();
         }

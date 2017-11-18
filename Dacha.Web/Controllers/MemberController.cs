@@ -5,6 +5,7 @@ using System.Web.Http;
 using System.Threading.Tasks;
 using Dacha.Web.Models;
 using Dacha.Bll.Models;
+
 using Dacha.Bll.Interfaces;
 
 namespace Dacha.Web.Controllers
@@ -12,7 +13,6 @@ namespace Dacha.Web.Controllers
     [Authorize]
     public class MemberController : ApiController
     {
-
         IMemberService _memberService;// = new MemberService();
 
         public MemberController(IMemberService memberService)
@@ -24,7 +24,7 @@ namespace Dacha.Web.Controllers
         public IHttpActionResult GetMembersCompanionship(string id)
         {
             IEnumerable<MemberUi> membersList = new List<MemberUi>();
-          var listDto=  _memberService.GetMembersCompanionship(id);            
+            var listDto=  _memberService.GetMembersCompanionship(id);            
             membersList = listDto.Select(s => new MemberUi() {
                 Id = s.Id.ToString(),
                 Owner = s.Owner,
@@ -37,14 +37,13 @@ namespace Dacha.Web.Controllers
             });            
             return Ok(membersList);
         }
-       
+           
         public async Task <IHttpActionResult> Post([FromBody] MemberUi member)
         {
             if (!ModelState.IsValid)
             {
-
                 return InternalServerError();
-            };
+            }
 
             MemberDto memberDto = new MemberDto();
             memberDto.Owner = member.Owner ?? "";
@@ -56,11 +55,10 @@ namespace Dacha.Web.Controllers
             memberDto.Addition = member.Addition ?? "";
             try
             { 
-            await  _memberService.WriteMemberAsync(memberDto);
+             await  _memberService.WriteMemberAsync(memberDto);
             }
             catch(Exception e)
             {
-
             }
             return Ok(member);
         }
@@ -70,9 +68,8 @@ namespace Dacha.Web.Controllers
             Guid guid;
             if (!ModelState.IsValid)
             {
-
                 return InternalServerError();
-            };
+            }
             if (!Guid.TryParse(id, out guid))
             {
                 if (!Guid.TryParse(member.Id, out guid))
@@ -116,13 +113,8 @@ namespace Dacha.Web.Controllers
             }
             catch(Exception e)
             {
-
             }
-
             return Ok();
         }
-
-
-
     }
 }

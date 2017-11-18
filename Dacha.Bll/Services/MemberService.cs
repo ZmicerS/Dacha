@@ -6,7 +6,6 @@ using Dacha.Dal.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Dacha.Bll.Services
@@ -15,11 +14,9 @@ namespace Dacha.Bll.Services
     {
         private IUnitOfWork _database;
 
-
         public MemberService(string connection)
         {
             _database = new UnitOfWork(connection);
-
         }
         
         public IEnumerable<MemberDto> GetMembersCompanionship(string companionshipId)
@@ -55,15 +52,11 @@ namespace Dacha.Bll.Services
                 }
                 catch(Exception e)
                 {
-
                 }             
             }
             return membersList;
-        }//
+        }
 
-
-
-  
         public async Task WriteMemberAsync(MemberDto data)
         {
             Member member = new Member()
@@ -83,7 +76,6 @@ namespace Dacha.Bll.Services
             }
              catch (AggregateException ae)
              {
-
              }
         }
 
@@ -114,10 +106,8 @@ namespace Dacha.Bll.Services
             }
             catch (AggregateException ae)
             {
-
             }
         }
-
 
         public async Task DeleteMemberAsync(string id)
         {
@@ -129,9 +119,7 @@ namespace Dacha.Bll.Services
             }
             catch (Exception e)
             {
-
             }
         }
-
     }
 }

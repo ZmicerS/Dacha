@@ -48,8 +48,5 @@ namespace Dacha.Dal.EF
                 userMgr.AddToRole(user.Id, roleNameA);
             }
         }
-
-
     }
-
 }

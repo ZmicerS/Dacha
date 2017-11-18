@@ -15,7 +15,6 @@ namespace Dacha.Dal.Repositories
         private ApplicationRoleManager _roleManager;
 
         IRepository<RefreshToken> _refreshTokenRepository { set; get; }      
-
         IRepository<Companionship> _companionshipRepository { set; get; }
         IRepository<Member> _memberRepository { set; get; }
         IRepository<MemberDoc> _memberDocRepository { set; get; }
@@ -121,6 +120,5 @@ namespace Dacha.Dal.Repositories
                 this.disposed = true;
             }
         }
-
     }
 }

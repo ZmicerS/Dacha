@@ -29,10 +29,8 @@
                 }, function (response) {                                      
                     deferred.reject(response);//.data);
                 });
-
             return deferred.promise;
         };
         return service;
     }
-
 })();

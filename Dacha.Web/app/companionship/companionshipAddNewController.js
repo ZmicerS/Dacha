@@ -8,16 +8,16 @@
     function companionshipAddNewController(companionshipService, $scope, $http, $state, $stateParams) {     
         var vm = this;
         vm.dataLoading = false;
-        vm.addData={
-        id : "",
-        name: "",
-        address : "",
-        registration : "",
-        chairman : "",
-        membership : "",
-        addition : ""
-    }
-    //
+        vm.addData = {
+            id: "",
+            name: "",
+            address: "",
+            registration: "",
+            chairman: "",
+            membership: "",
+            addition: ""
+        };
+    
         vm.addition = function () {          
             vm.dataLoading = true;
             var datasend = {
@@ -40,6 +40,5 @@
         vm.cancel = function () {
             $state.go('companionshiplist', {}, { reload: false });
         };
-
-    }//
+    }
 })();

@@ -1,7 +1,6 @@
 ﻿using Dacha.Dal.Entities;
 using System.Data.Entity;
 
-
 namespace Dacha.Dal.Repositories
 {
     public class MemberDocRepository : Repository<MemberDoc>
@@ -11,5 +10,4 @@ namespace Dacha.Dal.Repositories
 
         }
     }
-
 }

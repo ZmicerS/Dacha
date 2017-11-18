@@ -15,6 +15,4 @@ namespace Dacha.Dal.Entities
         public Guid? MemberId { get; set; }
         public virtual Member Member { get; set; }       
     }
-
-
 }

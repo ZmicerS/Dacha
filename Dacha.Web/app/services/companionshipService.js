@@ -49,7 +49,7 @@
             {
                 currentHeader.Authorization = 'Bearer ' + accesstoken;
             }
-            //
+            
             $http({
                 url: urlCompanionship,
                 method: "POST",
@@ -81,7 +81,7 @@
             if (accesstoken) {
                 currentHeader.Authorization = 'Bearer ' + accesstoken;
             }
-            //
+            
             $http({
                 url: urlCompanionship +'/'+ data.id,
                 method: "PUT",
@@ -96,7 +96,6 @@
 
             return deferred.promise;
         }
-
 
         service.deleteCompanionship = function (data) {
             var deferred = $q.defer();
@@ -119,8 +118,6 @@
             });
             return deferred.promise;
         }
-
         return service;
     }
-
 })();

@@ -9,6 +9,5 @@ namespace Dacha.Dal.Repositories
        {
 
        }
-
     }
 }

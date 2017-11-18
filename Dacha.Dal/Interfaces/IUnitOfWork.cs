@@ -1,9 +1,6 @@
 ﻿using Dacha.Dal.Entities;
 using Dacha.Dal.Identity;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Dacha.Dal.Interfaces
@@ -31,5 +28,4 @@ namespace Dacha.Dal.Interfaces
         /// <returns>Task</returns>
         Task SaveAsync();
     }
-
 }

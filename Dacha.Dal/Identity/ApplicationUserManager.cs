@@ -1,17 +1,8 @@
-﻿using Dacha.Dal.EF;
-using Dacha.Dal.Entities;
+﻿using Dacha.Dal.Entities;
 using Microsoft.AspNet.Identity;
-using Microsoft.AspNet.Identity.EntityFramework;
-using Microsoft.Owin;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Dacha.Dal.Identity
 {
-
     public class ApplicationUserManager : UserManager<ApplicationUser>
     {
         private IUserStore<ApplicationUser> _store;
@@ -37,9 +28,7 @@ namespace Dacha.Dal.Identity
                 RequireDigit = true,
                 RequireLowercase = true,
                 RequireUppercase = true,             
-            };
-            
-        }
-      
+            };            
+        }      
     }
 }

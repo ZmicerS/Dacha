@@ -6,7 +6,7 @@
             .state('memberdoclist', {
                 url: '/memberdoclist',
                 templateUrl: '/app/memberdoc/memberdoclist.html',
-                controller: 'memberDocListController',// as vm',
+                controller: 'memberDocListController',
                 params: {
                     'memberId': '',
                     'memberOwner': ''

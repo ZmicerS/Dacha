@@ -5,7 +5,6 @@ using Microsoft.AspNet.Identity;
 
 namespace Dacha.Dal.Entities
 {
-
     public class ApplicationUser : IdentityUser
     {       
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager, string authenticationType)

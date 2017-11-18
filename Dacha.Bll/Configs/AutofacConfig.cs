@@ -1,10 +1,10 @@
 ﻿using Autofac;
+using System.Data.Entity;
 using Dacha.Dal.Interfaces;
 using Dacha.Dal.Repositories;
 using Dacha.Bll.Services;
 using Dacha.Bll.Interfaces;
 using Dacha.Dal.EF;
-using System.Data.Entity;
 
 namespace Dacha.Bll.Configs
 {
@@ -17,9 +17,7 @@ namespace Dacha.Bll.Configs
             builder.RegisterType<CompanionshipService>().As<ICompanionshipService>().WithParameter(new TypedParameter(typeof(string), connectionStringName));
             builder.RegisterType<MemberService>().As<IMemberService>().WithParameter(new TypedParameter(typeof(string), connectionStringName));            
             builder.RegisterType<MemberDocService>().As<IMemberDocService>().WithParameter(new TypedParameter(typeof(string), connectionStringName));
-            builder.RegisterType<AccountService>().As<IAccountService>().WithParameter(new TypedParameter(typeof(string), connectionStringName));
-     
-         }
-      
+            builder.RegisterType<AccountService>().As<IAccountService>().WithParameter(new TypedParameter(typeof(string), connectionStringName));     
+         }      
     }
 }

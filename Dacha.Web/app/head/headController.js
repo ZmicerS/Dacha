@@ -7,5 +7,4 @@
         var vm = this;
         $state.go('login');
     }
-
 })();

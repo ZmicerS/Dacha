@@ -15,15 +15,12 @@ namespace Dacha.Bll.Services
         public AccountService(string connection)
         {
             _database = new UnitOfWork(connection);
-
         }
         
         public AccountService(UnitOfWork unitOfWork)
         {
             _database = unitOfWork;
-
         }
-
 
         public async Task RegisterUserAsync(RegisterModelDto registerModel)
         {
@@ -55,9 +52,6 @@ namespace Dacha.Bll.Services
             }
             return;
         }
-
-
     }
-
 }
 

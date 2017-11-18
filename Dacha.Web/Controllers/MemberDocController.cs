@@ -29,7 +29,7 @@ namespace Dacha.Web.Controllers
                 this.Request.CreateResponse(HttpStatusCode.UnsupportedMediaType);
             }
             MemberDocDto memberDocDto = new MemberDocDto();
-              var provider = new MultipartMemoryStreamProvider();
+            var provider = new MultipartMemoryStreamProvider();
             await Request.Content.ReadAsMultipartAsync(provider);
             foreach (var content in provider.Contents)
             {
@@ -60,9 +60,10 @@ namespace Dacha.Web.Controllers
                 }                                
             }
             _memberDocService.UploadSingleFile(memberDocDto);
+            //
             return Ok("file upload");
         }
-     
+              
         [HttpGet]
         [Route("api/MemberDocListId/{id}")]
         public IEnumerable<string> MemberDocListId(string id)
