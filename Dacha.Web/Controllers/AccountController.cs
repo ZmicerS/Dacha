@@ -26,10 +26,11 @@ namespace Dacha.Web.Controllers
             {
                 return InternalServerError();
             };
-            RegisterModelDto registerModelDto = new RegisterModelDto() {
-            Email=registerModel.Email,
-            Password=registerModel.Password,
-            ConfirmPassword=registerModel.ConfirmPassword
+            RegisterModelDto registerModelDto = new RegisterModelDto()
+            {
+                Email = registerModel.Email,
+                Password = registerModel.Password,
+                ConfirmPassword = registerModel.ConfirmPassword
             };
             try
             {
@@ -38,7 +39,6 @@ namespace Dacha.Web.Controllers
             catch (Exception e)
             {
                 return BadRequest(e.Message);
-                    
             }
             return Ok();
         }
